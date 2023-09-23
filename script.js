@@ -612,6 +612,8 @@ console.log(objJihyun);
 
 *****************************************************************************/
 
+/******************************************************************************
+
 ////// ! 24. Object Methods
 const objJihyun = {
   firstName: "Jihyun",
@@ -654,3 +656,22 @@ const objJihyunThis = {
 };
 
 console.log(objJihyunThis.calcAge2());
+
+*****************************************************************************/
+
+////// ! 25. for loop
+console.log("Lifting weight repetition 1");
+console.log("Lifting weight repetition 2");
+console.log("Lifting weight repetition 3");
+console.log("Lifting weight repetition 4");
+console.log("Lifting weight repetition 5");
+console.log("Lifting weight repetition 6");
+console.log("Lifting weight repetition 7");
+console.log("Lifting weight repetition 8");
+console.log("Lifting weight repetition 9");
+console.log("Lifting weight repetition 10");
+
+// * for loop keeps running while condition is TRUE (조건이 ture일동안 실행된다.)
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weight repetition ${rep}`);
+}
