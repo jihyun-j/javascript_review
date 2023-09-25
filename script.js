@@ -680,7 +680,64 @@ for (let rep = 1; rep <= 10; rep++) {
 
 ******************************************************************************/
 
+/******************************************************************************
+
 ////// ! 26. Looping Array, Breaking and Continuing
+const arrJihyun = [
+  "Jihyun",
+  "Jeon",
+  2037 - 1991,
+  "teacher",
+  ["John", "Michael", "Steven", "Peter"],
+  true,
+  32,
+];
+const types = [];
+
+for (let i = 0; i < arrJihyun.length; i++) {
+  // Reading from arrJihyun array
+  console.log(arrJihyun[i]);
+
+  // Filling types array
+  //types[i] = typeof arrJihyun[i];
+  types.push(typeof arrJihyun[i]);
+}
+console.log(types);
+
+const years = [1991, 1983, 1985, 1994];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2023 - years[i]);
+}
+console.log(ages);
+
+// continue
+console.log("--------- ONLY STRING ---------");
+// 문자열일 때만 console.log에 보여준다. 즉 문자 타입이 아닌 다른 타입들은 건너뛴다.
+for (let i = 0; i < arrJihyun.length; i++) {
+  if (typeof arrJihyun[i] !== "string") continue;
+
+  console.log(arrJihyun[i], typeof arrJihyun[i]);
+}
+
+// break
+console.log("--------- ONLY BREAKING ---------");
+// 반복문 전체를 종료 시킨다.
+// types = ['string', 'string', 'number', 'string', 'object', 'boolean', 'number']
+// types 배열에서 첫번째 'number' 까지만 실행시키고 종료 시킨다.
+for (let i = 0; i < arrJihyun.length; i++) {
+  if (typeof arrJihyun[i] === "number") break;
+
+  console.log(arrJihyun[i], typeof arrJihyun[i]);
+}
+
+******************************************************************************/
+
+/******************************************************************************
+
+////// ! 27. Looping Backwards and Loops in Loops
+
 const arrJihyun = [
   "Jihyun",
   "Jeon",
@@ -689,6 +746,77 @@ const arrJihyun = [
   ["John", "Michael", "Steven", "Peter"],
 ];
 
-for (let i = 0; ; i++) {
-  console.log(arrJihyun[0]);
+// * for loop을 이용해 배열 뒤집기
+for (let i = arrJihyun.length - 1; i >= 0; i--) {
+  console.log(i, arrJihyun[i]);
 }
+
+// * Loop inside another Loop
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`------- Starting exercise ${exercise}-------`);
+
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Lifting weight repetition ${rep}`);
+  }
+}
+
+/* Loop inside another Loop 결과값
+
+------- Starting exercise 1-------
+Lifting weight repetition 1
+Lifting weight repetition 2
+Lifting weight repetition 3
+Lifting weight repetition 4
+Lifting weight repetition 5
+------- Starting exercise 2-------
+Lifting weight repetition 1
+Lifting weight repetition 2
+Lifting weight repetition 3
+Lifting weight repetition 4
+Lifting weight repetition 5
+------- Starting exercise 3-------
+Lifting weight repetition 1
+Lifting weight repetition 2
+Lifting weight repetition 3
+Lifting weight repetition 4
+Lifting weight repetition 5
+
+******************************************************************************/
+
+/******************************************************************************
+
+////// ! 28. while loop
+
+let rep = 1;
+while (rep <= 10) {
+  console.log(`While loop: Lifting weight repetition ${rep}`);
+  rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log(`Loop is about to end...`);
+}
+
+******************************************************************************/
+
+// ? Coding Challenge
+
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+  tips.push(calcTip(bills[i]));
+  totals.push(bills[i] + tips[i]);
+}
+
+console.log(totals);
