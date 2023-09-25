@@ -657,7 +657,9 @@ const objJihyunThis = {
 
 console.log(objJihyunThis.calcAge2());
 
-*****************************************************************************/
+******************************************************************************/
+
+/******************************************************************************
 
 ////// ! 25. for loop
 console.log("Lifting weight repetition 1");
@@ -674,4 +676,19 @@ console.log("Lifting weight repetition 10");
 // * for loop keeps running while condition is TRUE (조건이 ture일동안 실행된다.)
 for (let rep = 1; rep <= 10; rep++) {
   console.log(`Lifting weight repetition ${rep}`);
+}
+
+******************************************************************************/
+
+////// ! 26. Looping Array, Breaking and Continuing
+const arrJihyun = [
+  "Jihyun",
+  "Jeon",
+  2037 - 1991,
+  "teacher",
+  ["John", "Michael", "Steven", "Peter"],
+];
+
+for (let i = 0; ; i++) {
+  console.log(arrJihyun[0]);
 }
